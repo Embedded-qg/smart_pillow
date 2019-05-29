@@ -38,5 +38,4 @@
 .\obj\main.o: .\AD7190\AD7190.h
 .\obj\main.o: .\Public\delay.h
 .\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-.\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
 .\obj\main.o: .\Public\bsp_TiMbase.h

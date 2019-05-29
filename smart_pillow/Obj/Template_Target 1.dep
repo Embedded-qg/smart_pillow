@@ -1,5 +1,5 @@
 Dependencies for Project 'Template', Target 'Target 1': (DO NOT MODIFY !)
-F (.\User\main.c)(0x5CEE9B3B)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\User -I.\Libraries\CMSIS -I.\Libraries\STM32F10x_StdPeriph_Driver\inc -I.\APP\led -I.\Public -I.\AD7190-I C:\Users\Liujizheng\Desktop\smart_pillow\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\obj\main.o --omf_browse .\obj\main.crf --depend .\obj\main.d)
+F (.\User\main.c)(0x5CEEA0B1)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\User -I.\Libraries\CMSIS -I.\Libraries\STM32F10x_StdPeriph_Driver\inc -I.\APP\led -I.\Public -I.\AD7190-I C:\Users\Liujizheng\Desktop\smart_pillow\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\obj\main.o --omf_browse .\obj\main.crf --depend .\obj\main.d)
 I (User\stm32f10x.h)(0x4D783CB4)
 I (.\Libraries\CMSIS\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -38,9 +38,8 @@ I (.\Public\sys.h)(0x5CA87016)
 I (.\AD7190\weight_manage.h)(0x5CA84FFE)
 I (.\Public\delay.h)(0x56D9D07C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (C:\Keil_v5\ARM\ARMCC\include\time.h)(0x5475F300)
 I (.\Public\bsp_TiMbase.h)(0x536651CE)
-F (.\User\stm32f10x_it.c)(0x5CA8598B)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\User -I.\Libraries\CMSIS -I.\Libraries\STM32F10x_StdPeriph_Driver\inc -I.\APP\led -I.\Public -I.\AD7190-I C:\Users\Liujizheng\Desktop\smart_pillow\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\obj\stm32f10x_it.o --omf_browse .\obj\stm32f10x_it.crf --depend .\obj\stm32f10x_it.d)
+F (.\User\stm32f10x_it.c)(0x5CEE9C61)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\User -I.\Libraries\CMSIS -I.\Libraries\STM32F10x_StdPeriph_Driver\inc -I.\APP\led -I.\Public -I.\AD7190-I C:\Users\Liujizheng\Desktop\smart_pillow\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\obj\stm32f10x_it.o --omf_browse .\obj\stm32f10x_it.crf --depend .\obj\stm32f10x_it.d)
 I (User\stm32f10x_it.h)(0x4D99A59E)
 I (User\stm32f10x.h)(0x4D783CB4)
 I (.\Libraries\CMSIS\core_cm3.h)(0x4D523B58)
