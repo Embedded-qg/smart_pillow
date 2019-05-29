@@ -36,4 +36,4 @@
 .\obj\weight_manage.o: .\Public\usart.h
 .\obj\weight_manage.o: .\Public\system.h
 .\obj\weight_manage.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\obj\weight_manage.o: .\Public\SysTick.h
+.\obj\weight_manage.o: .\User\SysTick.h

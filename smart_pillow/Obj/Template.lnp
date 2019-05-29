@@ -17,6 +17,7 @@
 ".\obj\delay.o"
 ".\obj\stmflash.o"
 ".\obj\weight_manage.o"
+".\obj\bsp_timbase.o"
 ".\obj\usart.o"
 ".\obj\ad7190.o"
 --library_type=microlib --strict --scatter ".\Obj\Template.sct"

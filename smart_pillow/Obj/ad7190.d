@@ -37,4 +37,4 @@
 .\obj\ad7190.o: .\Public\usart.h
 .\obj\ad7190.o: .\Public\system.h
 .\obj\ad7190.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\obj\ad7190.o: .\Public\SysTick.h
+.\obj\ad7190.o: .\User\SysTick.h

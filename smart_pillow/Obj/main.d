@@ -30,7 +30,6 @@
 .\obj\main.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
 .\obj\main.o: .\APP\led\led.h
 .\obj\main.o: .\Public\system.h
-.\obj\main.o: .\Public\SysTick.h
 .\obj\main.o: .\Public\usart.h
 .\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\obj\main.o: .\AD7190\ad7190.h
@@ -40,3 +39,4 @@
 .\obj\main.o: .\Public\delay.h
 .\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
+.\obj\main.o: .\Public\bsp_TiMbase.h
