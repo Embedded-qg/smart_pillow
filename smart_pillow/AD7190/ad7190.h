@@ -12,8 +12,8 @@ extern long int DisordersData;
 #define SPI_DOUT 		PCin(9)
 #define SPI_SCK  		PCout(11)
 #define GP0DAT 			PCin(9)
-#define SET_CS()		PCout(12)=1	//P4.3->/CS
-#define CLR_CS()		PCout(12)=0
+#define SET_CS()		PCout(13)=1	//P4.3->/CS
+#define CLR_CS()		PCout(13)=0
 
 #define	SET_SCL()		PCout(11)=1	//P4.4->SCLK
 #define	CLR_SCL()		PCout(11)=0

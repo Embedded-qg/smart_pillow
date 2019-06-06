@@ -5,7 +5,7 @@
 #include "stdio.h" 
 
 void USART1_Init(u32 bound);
-
+void UART5_Init(u32 bound);
 
 #endif
 

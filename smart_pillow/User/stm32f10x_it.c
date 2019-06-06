@@ -23,7 +23,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x_it.h"
-
+#include "esp8266_drive.h"
 
 extern volatile u32 time;
 
@@ -41,6 +41,51 @@ extern volatile u32 time;
 /******************************************************************************/
 /*            Cortex-M3 Processor Exceptions Handlers                         */
 /******************************************************************************/
+
+
+#define WIFI_BUF_MAX_SIZE 100
+
+extern int        TcpCloseFlag;
+extern uint32_t   send_data_time;
+
+/**
+  * @brief  与WIFI相关的串口中断函数（串口5）
+  * @param  None
+  * @retval None
+  */
+void UART5_IRQHandler( void )
+{	
+	u8 ucCh;
+	//每接收一个数据进入一次中断
+	if(USART_GetITStatus( UART5, USART_IT_RXNE ) != RESET )
+	{
+			ucCh  = USART_ReceiveData( UART5 );
+			printf("%c",ucCh);
+			//后台每次接收到数据都会发送一个字符"2"过来，相当于一个应答信号
+			//当接收到"2"就把 send_data_time置于0
+			if(ucCh == '2')
+			{
+				send_data_time = 0;
+			}
+			if(ESP8266_Fram_Record_Struct .InfBit .FramLength < ( RX_BUF_MAX_LEN - 1 ) ) 
+			{
+				//预留1个字节写结束符
+				ESP8266_Fram_Record_Struct .Data_RX_BUF[ ESP8266_Fram_Record_Struct .InfBit .FramLength ++ ]  = ucCh;	
+			} 
+			
+	}
+	 //每接收一帧数据进入这个代码块
+	if( USART_GetITStatus( UART5, USART_IT_IDLE ) == SET )                                         //数据帧接收完毕
+	{
+    	ESP8266_Fram_Record_Struct .InfBit .FramFinishFlag = 1;
+		
+			ucCh = USART_ReceiveData( UART5 );     		//由软件序列清除中断标志位(先读USART_SR，然后读USART_DR)
+			printf("\r\n收到一帧数据\r\n");
+			TcpCloseFlag = strstr ( ESP8266_Fram_Record_Struct .Data_RX_BUF, "CLOSED\r\n" ) ? 1 : 0;
+	}	
+}
+
+
 
 /**
   * @brief  This function handles NMI exception.

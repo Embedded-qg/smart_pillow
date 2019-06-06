@@ -39,3 +39,8 @@
 .\obj\main.o: .\Public\delay.h
 .\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\obj\main.o: .\Public\bsp_TiMbase.h
+.\obj\main.o: .\Public\bsp_adc.h
+.\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\obj\main.o: .\Public\esp8266_drive.h
+.\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\obj\main.o: .\Public\sta_tcpclent_test.h
