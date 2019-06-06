@@ -24,7 +24,8 @@
 #include <stdlib.h>
 #include "bsp_TiMbase.h" 
 
-#define a 0.01
+#define BREATH_PARA 0.01
+#define HEARTBEAT_PARA 0.3
 
 long int ad7190Result[4];
 long int data[1010];
@@ -38,10 +39,10 @@ volatile u32 time = 0;
 * 输    出         : 无
 *******************************************************************************/
 
-void Low_pass_filter(long int *data, long int *dataY, int n)
+//低通滤波算法
+void Low_pass_filter(long int *data, long int *dataY, int n, double a)
 {
 	int y;
-	int x;
 	y=data[0];
 	for(i=0; i<n; i++)
 	{
@@ -73,16 +74,28 @@ int Peak_num(long int *data, int n)
 	return peakNum;
 }
 
+int Beat_num(long int *data, int num)
+{
+	int n=0;
+	int beatNum=0;
+	for(i=1; i<num-1; i++)
+  {
+		if(n<0) n=0;
+		if(abs(data[i]-data[i-1]+data[i]-data[i+1])>60 && n==0)
+		{
+			if(abs(data[i]-data[i-1])+50 >20)
+				beatNum++;
+			n=3;
+		}
+		n--;
+	}
+	return beatNum;
+}
+
+
 int main()
 {		
-	
 
-	
-	
-	int tmp3 = 0;
-	int tmp4 = 0;
-	unsigned char tmp = 0x50;
-  unsigned char tmp2[3];
 	SystemInit();
 	delay_init(72);
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);  //中断优先级分组 分2组
@@ -95,8 +108,11 @@ int main()
 	TIM2_Configuration();
 	TIM2_NVIC_Configuration();
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2 , ENABLE);
+	printf("HelloWorld!\n");
 	while(1)
 	{
+		int breath_num;
+		int heartbeat_num;
 		int n=0;
 		while(time<10000)
 		{
@@ -107,8 +123,12 @@ int main()
 		}
 //		for(i=0; i<n; i++)
 //			printf("%ld ",data[i]);
-		Low_pass_filter(data, dataY, n);
-		printf("\n%d\n",Peak_num(dataY, n));
+		Low_pass_filter(data, dataY, n, BREATH_PARA);
+		breath_num=Peak_num(dataY, n);
+		Low_pass_filter(data, dataY, n, HEARTBEAT_PARA);
+		heartbeat_num=Beat_num(dataY, n);
+		printf("%d ",breath_num);
+		printf("%d ",heartbeat_num);
 		printf("\n%d\n",n);
 		n=0;
 		time=0;
